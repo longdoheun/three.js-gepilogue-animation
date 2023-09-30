@@ -1,4 +1,4 @@
-import * as THREE from "three/build/three.module.js";
+import * as THREE from "../node_modules/three/build/three.module";
 
 // 필요한 three.js 라이브러리를 가져옵니다.
 // import * as THREE from "three";
@@ -25,7 +25,7 @@ class Curve {
     const curve = new THREE.CatmullRomCurve3(this.points);
     const material = new THREE.LineBasicMaterial({ color: this.color });
     const geometry = new THREE.BufferGeometry().setFromPoints(
-      curve.getPoints(100)
+      curve.getPoints(200)
     );
     return new THREE.Line(geometry, material);
   }
