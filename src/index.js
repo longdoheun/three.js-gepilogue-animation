@@ -25,7 +25,7 @@ class Curve {
     const curve = new THREE.CatmullRomCurve3(this.points);
     const material = new THREE.LineBasicMaterial({ color: this.color });
     const geometry = new THREE.BufferGeometry().setFromPoints(
-      curve.getPoints(200)
+      curve.getPoints(400)
     );
     return new THREE.Line(geometry, material);
   }
