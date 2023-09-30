@@ -100,7 +100,7 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 10;
 
 // 렌더러를 생성하고 웹페이지에 렌더러를 추가합니다.
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
