@@ -88,7 +88,7 @@ const points2 = [
 ];
 
 const newLines = new Lines(points1, "#945273").line;
-const lines = new Lines(points2, "#945273").line;
+// const lines = new Lines(points2, "#945273").line;
 
 // 카메라를 생성합니다.
 const camera = new THREE.PerspectiveCamera(
@@ -114,9 +114,9 @@ const animate = function () {
     line.rotation.y += 0.005;
   }
 
-  for (const line of lines) {
-    line.rotation.y += 0.005;
-  }
+  // for (const line of lines) {
+  //   line.rotation.y += 0.005;
+  // }
 
   renderer.render(scene, camera);
 };
