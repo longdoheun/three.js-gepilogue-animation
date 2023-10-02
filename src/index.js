@@ -6,6 +6,7 @@ import * as THREE from "../node_modules/three/build/three.module";
 const scene = new THREE.Scene();
 
 const backgroundColor = new THREE.Color("#f1f1f1");
+// const backgroundColor = new THREE.Color("#945273");
 scene.background = backgroundColor;
 
 class Curve {
@@ -54,7 +55,7 @@ class Lines {
         const vector = new THREE.Vector4(
           point.x + 0.0 * i,
           point.y + 0.0 * i,
-          point.z + 0.3 * i,
+          point.z + -0.3 * i,
           1
         );
         vector.applyMatrix4(rotationMatrix);
@@ -74,21 +75,33 @@ class Lines {
 }
 // 곡선을 생성할 제어점을 정의합니다.
 const points1 = [
-  new THREE.Vector3(0.0, 12, 0),
+  new THREE.Vector3(0, 12, 0),
   new THREE.Vector3(-2, 6, 0),
   new THREE.Vector3(2, -6, 0),
   new THREE.Vector3(0, -12, 0),
 ];
 
+// const points1 = [
+//   new THREE.Vector3(-3, 12, 0),
+//   new THREE.Vector3(-5, 6, 0),
+//   new THREE.Vector3(-1, -6, 0),
+//   new THREE.Vector3(-3, -12, 0),
+// ];
+
 const points2 = [
-  new THREE.Vector3(0, -12, 0),
-  new THREE.Vector3(2, -6, 0),
-  new THREE.Vector3(-2, 6, 0),
-  new THREE.Vector3(0, 12, 0),
+  new THREE.Vector3(8, 12, 0),
+  new THREE.Vector3(6, 6, 0),
+  new THREE.Vector3(10, -6, 0),
+  new THREE.Vector3(8, -12, 0),
 ];
 
 const newLines = new Lines(points1, "#945273").line;
+// const newLines = new Lines(points1, "#f1f1f1").line;
 // const lines = new Lines(points2, "#945273").line;
+
+// 3D 좌표 평면 생성
+// const axesHelper = new THREE.AxesHelper(10);
+// scene.add(axesHelper);
 
 // 카메라를 생성합니다.
 const camera = new THREE.PerspectiveCamera(
@@ -97,7 +110,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.z = 10;
+camera.position.z = 5;
 
 // 렌더러를 생성하고 웹페이지에 렌더러를 추가합니다.
 const renderer = new THREE.WebGLRenderer({ antialias: true });
